@@ -1,0 +1,366 @@
+
+* {
+    box-sizing: inherit;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: "Inknut Antiqua", serif;
+    font-style: normal;
+    background: #1E1E2F; /* Dark background */
+    color: #D1D5DB; /* Light text color */
+    position: relative; /* For background layering */
+    min-height: 100vh;
+}
+
+
+/* Background image with transparency */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/images/mob-background.jpg') no-repeat center center;
+    background-size: cover;
+    opacity: 0.3; /* Adjust transparency (0 to 1, 0.3 is 30% opacity) */
+    z-index: -1; /* Behind content */
+}
+
+a, a:hover {
+    text-decoration: none;
+}
+
+nav {
+    color: #FFF;
+    padding: 20px 20px;
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    color: #FFF;
+}
+
+nav a:hover {
+    color: #6B7280;
+    
+}
+
+nav a:active {
+  transform: translateY(4px);
+}
+
+
+.logo {
+    flex: 1;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+    font-weight: bold;
+    width: 400px;
+}
+
+.logo a:hover {
+    color: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+
+.logo img {
+    width: 70px;
+    display: flex;
+}
+
+
+.menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin-right: 100px;
+}
+
+.menu li {
+    padding: 15px 30px;
+    font-size: 20px;
+    font-weight: 600;
+    
+}
+
+.toggle {
+    font-size: 30px;
+    display: none;
+}
+
+
+.message-box {
+    background: rgba(255, 255, 255, 0.1); /* Adjusted transparency (0.2 = 20% opacity) */
+    padding: 30px;
+    border-radius: 15px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    color: #FFF;
+    position: relative;
+    text-align: center; /* Center the text */
+    width: 300px; /* Fixed width to prevent stretching */
+    margin-left: auto; /* Center the box */
+    margin-right: auto; /* Center the box */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Optional: subtle border */
+}
+
+.message-box h2 {
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.join-button {
+    display: inline-block;
+    padding: 15px 25px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #FFF;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+
+}
+
+.join-button:hover {
+    background: #6B7280;
+    transform: translateY(4px);
+}
+
+.join-button:active {
+  transform: translateY(4px);
+}
+
+
+.input-section {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Align items vertically */
+    gap: 100px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    flex-wrap: nowrap; /* Prevent wrapping of flex items */
+}
+
+.input-group {
+    display: flex;
+    align-items: center; /* Align input and icon vertically */
+    gap: 20px; /* Small gap between input and icon */
+}
+
+
+.wallet-input {
+    padding: 20px 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #FFF;
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Optional: subtle border */
+    border-radius: 15px;
+    font-size: 16px;
+    width: 400px; /* Adjustable width */
+    text-align: center;
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden; /* Hide overflow if too long */
+    text-overflow: ellipsis; /* Add ellipsis if text overflows */
+    
+}
+
+.wallet-input::placeholder {
+    color: #9CA3AF; /* Lighter placeholder text */
+}
+
+.whitelist-button {
+    font-family: "Inknut Antiqua", serif;
+    font-weight: 600;
+    padding: 20px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #FFF;
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Optional: subtle border */
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 17px;
+    white-space: nowrap; /* Prevent text wrapping */
+    min-width: 120px; /* Ensure minimum width to keep text on one line */
+}
+
+
+.wallet-input:hover, .whitelist-button:hover {
+    background: #6B7280;
+    transform: translateY(4px);
+}
+
+
+.status-icon {
+    font-size: 24px;
+    margin-left: 5px;
+    display: inline-block;
+    margin-left: 0; /* Removed margin to bring icon closer */
+    visibility: hidden; /* Hide icon by default until checked */
+}
+
+.status-icon i {
+    transition: all 0.3s ease; /* Smooth transition for icon changes */
+}
+
+#check-icon.green {
+    visibility: visible; /* Show when green */
+}
+
+#check-icon.green i {
+    color: #00FF00; /* Green checkmark */
+}
+
+#check-icon.red {
+    visibility: visible; /* Show when red */
+}
+
+#check-icon.red i {
+    color: #FF0000; /* Red X */
+}
+
+.container {
+    max-width: 800px; /* Container width */
+    margin: 0 auto; /* Center the container */
+    padding: 20px;
+    text-align: center; /* Center inline or inline-block children */
+}
+
+.update-note {
+    background: rgba(255, 255, 255, 0.1);
+    font-size: 15px;
+    font-weight: 600;
+    color: #FFF;
+    padding: 15px;
+    font-style:bold;
+    display: inline-block; /* Wraps around text only */
+    border-radius: 15px; /* Optional: rounded corners */
+    margin: 0 auto; /* Center it */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Optional: subtle border */
+}
+
+
+.coming-soon {
+    background: rgba(255, 255, 255, 0.10); /* Semi-transparent background */
+    padding: 20px 90px;
+    border-radius: 10px;
+    margin-top: 150px;
+    text-align: center;
+    width: 500px; /* Wider to match the image */
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+}
+
+.coming-soon h2 {
+    font-size: 48px; /* Large text as in the image */
+    color: #FFF;
+    margin: 0;
+    text-transform: uppercase; /* Uppercase like the image */
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.section {
+    display: none; /* Hide all sections by default */
+}
+
+#home {
+    display: block; /* Show home section by default */
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+    nav {
+        display: block;
+        position: relative;
+        padding: 15px 20px;
+    }
+
+    .logo a {
+        font-size: 13px;
+        flex-wrap: nowrap; /* Prevent wrapping */
+        width: 300px;
+    }
+
+
+    .menu {
+        margin-top: 15px;
+        display: none;
+        margin-right: 0;
+    }
+
+    .menu button {
+        margin-left: 25px;
+    }
+
+    .menu.active, .toggle {
+        display: block;
+    }
+
+    .toggle {
+        position:absolute;
+        top: 15px;
+        right: 20px;
+    }
+
+    .message-box {
+        width: 90%; /* Full width on mobile */
+        padding: 15px; /* Reduce padding */
+    }
+
+    .message-box p {
+        font-size: 16px; /* Reduce text size */
+    }
+
+    .join-button {
+        font-size: 14px; /* Reduce button text size */
+        padding: 8px 16px; /* Reduce padding */
+    }
+
+    .input-section {
+        flex-direction: column; /* Stack vertically */
+        gap: 20px; /* Reduce gap */
+    }
+
+    .input-group {
+        width: 100%; /* Full width for input group */
+    }
+
+    .wallet-input {
+        width: 100%; /* Full width on mobile */
+        font-size: 14px; /* Reduce font size */
+        padding: 20px 5px; /* Reduce padding */
+    }
+
+    .whitelist-button {
+        width: 100%; /* Full width on mobile */
+        font-size: 14px; /* Reduce font size */
+        padding: 10px 5px; /* Reduce padding */
+    }
+
+    .status-icon {
+        font-size: 20px; /* Reduce icon size */
+    }
+
+    .update-note {
+        font-size: 15px; /* Reduce text size */
+        padding: 8px; /* Reduce padding */
+    }
+
+    .coming-soon {
+        width: 85%; /* Full width on mobile */
+        padding: 20px; /* Reduce padding */
+    }
+
+    .coming-soon h2 {
+        font-size: 32px; /* Reduce font size for single line */
+    }
+
+}
