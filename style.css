@@ -274,6 +274,40 @@ nav a:active {
 }
 
 
+.pfp {
+    background: rgba(255, 255, 255, 0.10); /* Semi-transparent background */
+    padding: 30px 20px;
+    border-radius: 10px;
+    margin-top: 70px;
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+}
+
+
+.pfp-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns of equal width */
+    gap: 20px; /* Space between images */
+    margin-top: 10px;
+    justify-items: center; /* Center images horizontally */
+}
+
+.pfp-image {
+    width: 170px; /* Fixed width for consistency */
+    height: 170px; /* Fixed height for consistency */
+    object-fit: cover; /* Maintain aspect ratio */
+    border-radius: 10px; /* Optional: rounded corners */
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.pfp-image:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+
+}
+
+
 
 
 @media screen and (max-width: 768px) {
@@ -363,4 +397,19 @@ nav a:active {
         font-size: 32px; /* Reduce font size for single line */
     }
 
+    .pfp-gallery {
+        grid-template-columns: repeat(2, 1fr); /* Two columns on mobile */
+    }
+
+    .pfp-image {
+        width: 150px; /* Smaller size on mobile */
+        height: 150px;
+    }
+
+    .pfp {
+        margin-bottom: 30px;
+        width: 330px;
+    }
+
 }
+
